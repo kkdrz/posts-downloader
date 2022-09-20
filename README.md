@@ -22,3 +22,11 @@ Example:
 ```
 java -jar build/libs/posts-downloader-0.0.1-SNAPSHOT.jar --app.output-directory=/my/custom/dir
 ```
+
+## Shell one-liner ;)
+
+*you probably will need to `apt-get install jq`*
+
+```shell
+curl -s https://jsonplaceholder.typicode.com/posts | jq -cr '.[] | .id, .' | awk 'NR%2{file=$0".json" ; next} {print $0 > file ; close(file)}'
+```
