@@ -1,2 +1,3 @@
 app:
-    json-api-url: https://jsonplaceholder.typicode.com/
+  json-api-url: https://jsonplaceholder.typicode.com/
+  output-directory: ./build/app-output
